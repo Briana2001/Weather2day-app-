@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+
+  <title>Weather2day | Weather Forecast</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Application Header -->
+  <header class="app-header">
+
+    <div class="header-content">
+
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">🌧️</span>
+        <h1>Weather <span>2day</span></h1>
+      </div>
+
+
+
+    </div>
+
+    <div class="location">
+
+      <span aria-hidden="true">📍</span>
+
+      <div>
+        <p id="city-name">Abuja</p>
+        <p id="country-name">Nigeria</p>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- City Search -->
+    <section class="search">
+
+      <form id="search-form">
+
+        <div class="search-box">
+
+          <span aria-hidden="true">🔍</span>
+
+          <input
+            type="search"
+            name="city"
+            id="city"
+            placeholder="Choose your city..."
+            autocomplete="off"
+            required
+          >
+
+          <button type="submit" aria-label="Search weather">
+            Search
+          </button>
+
+          <button
+            type="button"
+            id="current-location-button"
+            aria-label="Use my current location"
+          >
+            📍
+          </button>
+
+        </div>
+
+      </form>
+
+    </section>
+
+
+    <!-- Loading State -->
+    <div
+      id="loading-state"
+      class="loading-state"
+      role="status"
+      hidden
+    >
+      <span class="loading-spinner" aria-hidden="true"></span>
+      <p>Loading weather...</p>
+    </div>
+
+
+    <!-- Error Message -->
+    <div
+      id="error-message"
+      class="error-message"
+      role="alert"
+      hidden
+    >
+      Unable to retrieve weather. Please try again.
+    </div>
+
+
+    <!-- Main Weather Card -->
+    <section class="main-weather">
+
+      <div class="weather-main-content">
+
+        <!-- Temperature -->
+        <div class="temperature">
+
+          <p id="temperature-value">28</p>
+          <p id="temperature-unit">°C</p>
+
+        </div>
+
+        <!-- Weather Illustration -->
+        <div
+          id="weather-visual"
+          class="weather-illustration"
+          role="img"
+          aria-label="Sunny weather illustration"
+        ></div>
+
+        <!-- Weather Summary -->
+        <div class="weather-summary">
+
+          <p id="weather-condition">Sunny</p>
+
+          <p id="weather-description">
+            Clear skies throughout the day.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Weather Details -->
+      <div class="weather-details">
+
+        <div class="weather-detail">
+
+          <span class="detail-icon" aria-hidden="true">💧</span>
+
+          <p class="detail-label">Humidity</p>
+
+          <p id="humidity-value">75%</p>
+
+        </div>
+
+        <div class="weather-detail">
+
+          <span class="detail-icon" aria-hidden="true">💨</span>
+
+          <p class="detail-label">Wind</p>
+
+          <p id="wind-speed-value">12 km/h</p>
+
+        </div>
+
+        <div class="weather-detail">
+
+          <span class="detail-icon" aria-hidden="true">🌡️</span>
+
+          <p class="detail-label">Feels Like</p>
+
+          <p id="feels-like-value">30°C</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Hourly Forecast -->
+    <section class="hourly-forecast">
+
+      <div class="forecast-heading">
+
+        <h3>◷ Hourly Forecast</h3>
+
+        <button type="button" class="see-all-button">
+         
+        </button>
+
+      </div>
+
+      <div class="hourly-list">
+
+        <div class="hourly-card">
+          <p class="hourly-time">10 AM</p>
+          <p class="hourly-icon">🌧️</p>
+          <p class="hourly-temperature">24°C</p>
+        </div>
+
+        <div class="hourly-card">
+          <p class="hourly-time">1 PM</p>
+          <p class="hourly-icon">🌧️</p>
+          <p class="hourly-temperature">25°C</p>
+        </div>
+
+        <div class="hourly-card">
+          <p class="hourly-time">4 PM</p>
+          <p class="hourly-icon">🌧️</p>
+          <p class="hourly-temperature">26°C</p>
+        </div>
+
+        <div class="hourly-card">
+          <p class="hourly-time">7 PM</p>
+          <p class="hourly-icon">☁️</p>
+          <p class="hourly-temperature">25°C</p>
+        </div>
+
+        <div class="hourly-card">
+          <p class="hourly-time">10 PM</p>
+          <p class="hourly-icon">☁️</p>
+          <p class="hourly-temperature">24°C</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Five-Day Forecast -->
+    <section class="daily-forecast">
+
+      <div class="forecast-heading">
+
+        <h3>▦ 5-Day Forecast</h3>
+
+        <button type="button" class="see-all-button">
+            
+        </button>
+
+      </div>
+
+      <div class="daily-list">
+
+        <div class="daily-card">
+          <p class="daily-day">Mon</p>
+          <p class="daily-icon">🌧️</p>
+          <p class="daily-temperature">24°/27°</p>
+        </div>
+
+        <div class="daily-card">
+          <p class="daily-day">Tue</p>
+          <p class="daily-icon">☁️</p>
+          <p class="daily-temperature">25°/28°</p>
+        </div>
+
+        <div class="daily-card">
+          <p class="daily-day">Wed</p>
+          <p class="daily-icon">🌤️</p>
+          <p class="daily-temperature">26°/29°</p>
+        </div>
+
+        <div class="daily-card">
+          <p class="daily-day">Thu</p>
+          <p class="daily-icon">🌧️</p>
+          <p class="daily-temperature">25°/28°</p>
+        </div>
+
+        <div class="daily-card">
+          <p class="daily-day">Fri</p>
+          <p class="daily-icon">🌤️</p>
+          <p class="daily-temperature">25°/27°</p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
